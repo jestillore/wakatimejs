@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/jestillore/wakatimejs/issues"
   },
-  "homepage": "https://github.com/jestillore/wakatimejs#readme"
+  "homepage": "https://github.com/jestillore/wakatimejs#readme",
+  "dependencies": {
+    "request": "*",
+    "btoa": "*"
+  }
 }
