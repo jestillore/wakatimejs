@@ -1,6 +1,6 @@
 {
   "name": "wakatime",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WakaTime",
   "main": "index.js",
   "scripts": {
