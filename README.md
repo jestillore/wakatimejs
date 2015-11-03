@@ -1,5 +1,7 @@
 # wakatimejs
 
+JavaScript client for consuming the [WakaTime API](https://wakatime.com/developers).
+
 ## Install
 ```js
 npm install wakatime
