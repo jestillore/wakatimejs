@@ -8,5 +8,5 @@ node_js:
   - 0.8
 
 before_script:
-  - npm update -g npm
-  - npm cache clean
+  - '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
+  - npm install -g npm@latest
