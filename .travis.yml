@@ -1,12 +1,21 @@
 language: node_js
 
-#Enable sudo as test
+node_js:
+  - "8.1"
+
 sudo: required
 
-#Test for stable version only
-node_js:
-  - 0.8
-
 before_script:
-  - '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
-  - npm install -g npm@latest
+  - "npm install -g npm@latest"
+  - "npm --version"
+
+install:
+  - "npm install"
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  # Skip updating shrinkwrap / lock
+  - "npm config set shrinkwrap false"
