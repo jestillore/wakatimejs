@@ -1,6 +1,6 @@
 {
   "name": "wakatime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A javascript library that fetches WakaTime information",
   "main": "./dist/index.js",
   "scripts": {
