@@ -2,10 +2,21 @@
   "name": "wakatime",
   "version": "0.0.2",
   "description": "A javascript library that fetches WakaTime information",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm test -- -w",
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "build": "babel ./src -d ./dist --ignore test.js",
+    "pretest": "npm run build",
+    "test": "mocha --compilers js:babel-core/register ./src/**/*.test.js",
+    "test:single": "mocha --compilers js:babel-core/register"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manniL/wakatimejs.git"
+    "url": "git+https://github.com/jestillore/wakatimejs.git"
   },
   "keywords": [
     "wakatime",
@@ -13,14 +24,25 @@
     "node",
     "promise"
   ],
-  "author": "Alexander Lichter",
+  "author": "Jillberth Estillore",
+  "contributors": [
+    "Alexander Lichter <alichter@developmint.de> (https://developmint.de)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manniL/wakatimejs/issues"
+    "url": "https://github.com/jestillore/wakatimejs/issues"
   },
-  "homepage": "https://github.com/manniL/wakatimejs#readme",
-  "dependencies": {
-    "request": "*",
-    "btoa": "*"
-  }
+  "homepage": "https://github.com/jestillore/wakatimejs#readme",
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.17.0",
+    "babel-preset-es2015": "^6.24.1",
+    "btoa": "^1.1.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "files": [
+    "dist"
+  ]
 }
