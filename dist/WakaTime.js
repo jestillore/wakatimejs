@@ -65,7 +65,7 @@ var WakaTime = exports.WakaTime = function () {
           headers = _getApiOptions.headers;
 
       console.log(url, headers);
-      return await axios.get(url, { headers: headers });
+      return (await axios.get(url, { headers: headers })).data;
     }
   }, {
     key: 'stats',
@@ -81,7 +81,7 @@ var WakaTime = exports.WakaTime = function () {
           url = _getApiOptions2.url,
           headers = _getApiOptions2.headers;
 
-      return await axios.get(url, { headers: headers });
+      return (await axios.get(url, { headers: headers })).data;
     }
   }, {
     key: 'summaries',
@@ -104,7 +104,7 @@ var WakaTime = exports.WakaTime = function () {
           url = _getApiOptions3.url,
           headers = _getApiOptions3.headers;
 
-      return await axios.get(url, { headers: headers });
+      return (await axios.get(url, { headers: headers })).data;
     }
   }, {
     key: 'durations',
@@ -115,7 +115,7 @@ var WakaTime = exports.WakaTime = function () {
           url = _getApiOptions4.url,
           headers = _getApiOptions4.headers;
 
-      return await axios.get(url, { headers: headers });
+      return (await axios.get(url, { headers: headers })).data;
     }
   }]);
 

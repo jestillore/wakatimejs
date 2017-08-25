@@ -1,6 +1,6 @@
 import btoa from 'btoa'
 import * as axios from 'axios'
-import { serialize, getDateString } from './helpers'
+import { getDateString, serialize } from './helpers'
 import { BASE_URL } from './constants'
 
 export class WakaTime {
@@ -31,7 +31,7 @@ export class WakaTime {
     console.log(this.getApiOptions('/users/current'))
     const {url, headers} = this.getApiOptions('/users/current')
     console.log(url, headers)
-    return await axios.get(url, {headers})
+    return (await axios.get(url, {headers})).data
   }
 
   async stats (stat = 'last_7_days') {
@@ -46,7 +46,7 @@ export class WakaTime {
       return new Error('Invalid stat parameter')
     }
     const {url, headers} = this.getApiOptions('/users/current/stats/' + stat)
-    return await axios.get(url, {headers})
+    return (await axios.get(url, {headers})).data
 
   }
 
@@ -67,14 +67,13 @@ export class WakaTime {
       end: end
     })
 
-    return await axios.get(url, {headers})
+    return (await axios.get(url, {headers})).data
   }
 
   async durations (date) {
     const {url, headers} = this.getApiOptions('/users/current/durations', {
       date: getDateString(date)
     })
-    return await axios.get(url, {headers})
-
+    return (await axios.get(url, {headers})).data
   }
 }
