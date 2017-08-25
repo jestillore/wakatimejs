@@ -1,5 +1,8 @@
 language: node_js
 
+#Enable sudo as test
+sudo: required
+
 #Test for stable version only
 node_js:
   - 0.8
