@@ -1,6 +1,8 @@
 language: node_js
 
-#Test for two node.js versions
+#Test for stable version only
 node_js:
-  - 0.6
   - 0.8
+
+before_script:
+  - npm update -g npm
