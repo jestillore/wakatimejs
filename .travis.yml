@@ -1,0 +1,6 @@
+language: node_js
+
+#Test for two node.js versions
+node_js:
+  - 0.6
+  - 0.8
