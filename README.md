@@ -1,6 +1,7 @@
 # wakatimejs
 
-JavaScript client for consuming the [WakaTime API](https://wakatime.com/developers).
+JavaScript library for getting data of the [WakaTime API](https://wakatime.com/developers).
+Currently, you can only retrieve data by using your WakaTime *API Key*
 
 ## Install
 ```js
@@ -9,32 +10,31 @@ npm install wakatime
 
 ## Usage
 ```js
-var WakaInstance = require('wakatime');
+import {WakaTime} from "wakatime"
 ```
 
 ### Set API Key
 ```js
-var wi = new WakaInstance('API_KEY');
+const wakaTimeInstance = new WakaTime('API_KEY')
 ```
 or
 ```js
-var wi = new WakaInstance();
-wi.setAPIKey('API_KEY');
+const wakaTimeInstance = new WakaTime()
+wakaTimeInstance.setAPIKey('API_KEY')
 ```
 
 ### Get API Key
 ```js
-var apiKey = wi.getAPIKey();
-console.log(apiKey); // API_KEY
+const apiKey = wakaTimeInstance.getAPIKey()
+console.log(apiKey) // API_KEY
 ```
 
 ### Get current user
 ```js
-wi.currentUser(function (error, response, user) {
-    if (!error && response.statusCode == 200) {
-        // the third parameter holds the user object
-    }
-});
+wakaTimeInstance.currentUser()
+    .then((resp) => console.log(response))
+    .catch((err) => console.log(err))
+})
 ```
 
 ## Get stats
@@ -47,64 +47,52 @@ Range can be one of:
 * all_time
 
 ```js
-wi.stats('last_7_days', function (error, response, stats) {
-    
-});
+wakaTimeInstance.stats('last_7_days').then().catch()
 ```
 
 ### Get summaries
 >A user's logged time for the given time range as an array of summaries segmented by day.
 
-There are four ways to get your Waka summaries.
+There are four ways to get your WakaTime summaries.
 1. By defining start and end date in `YYYY-MM-DD` format.
     ```js
-    wi.summaries({
+    wakaTimeInstance.summaries({
         start: '2015-10-07',
         end: '2015-10-13'
-    }, function (error, response, summary) {
-        
-    });
+    }).then().catch()
     ```
 2. By defining start and end date in a `Date` instance.
     ```js
-    wi.summaries({
+    wakaTimeInstance.summaries({
         start: new Date(),
         end: new Date()
-    }, function (error, response, summary) {
-    
-    });
+    }).then().catch()
     ```
 
-3. For single date summary, define the date in `YYYY-MM-DD` format.
+3. For single date summary, define the date in `YYYY-MM-DD` format or use a JS Date.
     ```js
-    wi.summaries('2015-10-13', FUNCTION (error, response, summary) {
-        
-    });
+    wakaTimeInstance.summaries('2015-10-13').then().catch()
+    wakaTimeInstance.summaries(new Date()).then().catch()
     ```
-    
-4. For single date summary, define the date in a `Date` instance.
-    ```js
-    wi.summaries(new Date(), function (error, response, summary) {
-        
-    });
-    ```
+ 
     
 ### Get durations
 >A user's logged time for the given day as an array of duration blocks.
 There are two days to get durations.
 1. By defining the target date in `YYYY-MM-DD` format.
     ```js
-    wi.durations('2015-10-13', function (error, response, body) {
-        
-    });
+    wakaTimeInstance.durations('2015-10-13').then().catch()
     ```
 
 2. By defining the target date in a `Date` instance.
     ```js
-    wi.durations(new Date(), function (error, response, body) {
-        
-    });
+    wakaTimeInstance.durations(new Date()).then().catch()
     ```
 
+## Authors
+
+* **Jillberth Estillore** - *Created the library* -  [Github](https://github.com/jestillore) - [Email](mailto:ejillberth@gmail.com)
+* Alexander Lichter - *Updated the library to ES6* - [Github](https://github.com/manniL) - [StackOverflow](http://stackoverflow.com/users/3975480/mannil)
+
 ## License
-MIT © [Jillberth Estillore](mailto:ejillberth@gmail.com)
+MIT
