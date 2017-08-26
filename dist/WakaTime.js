@@ -46,16 +46,6 @@ var WakaTime = exports.WakaTime = function () {
       };
     }
   }, {
-    key: 'setApiKey',
-    value: function setApiKey(apiKey) {
-      this.apiKey = apiKey;
-    }
-  }, {
-    key: 'getApiKey',
-    value: function getApiKey() {
-      return this.apiKey;
-    }
-  }, {
     key: 'currentUser',
     value: async function currentUser() {
       console.log(this.getApiOptions('/users/current'));

@@ -7,13 +7,13 @@ describe('WakaTime', () => {
   it('should return API key after being initialized', () => {
     const API_KEY = 'abcde'
     const instance = new WakaTime(API_KEY)
-    expect(instance.getApiKey()).to.equal(API_KEY)
+    expect(instance.apiKey).to.equal(API_KEY)
   })
   it('should return API key after manually setting it', () => {
     const API_KEY = 'abcde'
     const instance = new WakaTime()
-    instance.setApiKey(API_KEY)
-    expect(instance.getApiKey()).to.equal(API_KEY)
+    instance.apiKey = API_KEY
+    expect(instance.apiKey).to.equal(API_KEY)
   })
   it('should return an promise error when calling API methods', (done) => {
     const API_KEY = 'abcde'

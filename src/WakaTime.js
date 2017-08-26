@@ -19,14 +19,6 @@ export class WakaTime {
     }
   }
 
-  setApiKey (apiKey) {
-    this.apiKey = apiKey
-  }
-
-  getApiKey () {
-    return this.apiKey
-  }
-
   async currentUser () {
     console.log(this.getApiOptions('/users/current'))
     const {url, headers} = this.getApiOptions('/users/current')

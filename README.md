@@ -20,12 +20,12 @@ const wakaTimeInstance = new WakaTime('API_KEY')
 or
 ```js
 const wakaTimeInstance = new WakaTime()
-wakaTimeInstance.setAPIKey('API_KEY')
+wakaTimeInstance.apiKey = 'API_KEY'
 ```
 
 ### Get API Key
 ```js
-const apiKey = wakaTimeInstance.getAPIKey()
+const apiKey = wakaTimeInstance.apiKey
 console.log(apiKey) // API_KEY
 ```
 
