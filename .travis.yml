@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - "8.1"
+
+sudo: required
+
+before_script:
+  - "npm install -g npm@latest"
+  - "npm --version"
+
+install:
+  - "npm install"
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  # Skip updating shrinkwrap / lock
+  - "npm config set shrinkwrap false"
