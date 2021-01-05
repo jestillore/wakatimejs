@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/jestillore/wakatimejs#readme",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "btoa": "^1.1.2"
   },
   "devDependencies": {
