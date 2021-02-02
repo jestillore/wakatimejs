@@ -48,13 +48,13 @@ var WakaTime = exports.WakaTime = function () {
   }, {
     key: 'currentUser',
     value: async function currentUser() {
-      console.log(this.getApiOptions('/users/current'));
+//       console.log(this.getApiOptions('/users/current'));
 
       var _getApiOptions = this.getApiOptions('/users/current'),
           url = _getApiOptions.url,
           headers = _getApiOptions.headers;
 
-      console.log(url, headers);
+//       console.log(url, headers);
       return (await axios.get(url, { headers: headers })).data;
     }
   }, {

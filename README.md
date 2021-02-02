@@ -7,6 +7,10 @@ Currently, you can only retrieve data by using your WakaTime *API Key*
 ```js
 npm install wakatime
 ```
+or
+```js
+yarn add wakatime
+```
 
 ## Usage
 ```js
@@ -32,9 +36,8 @@ console.log(apiKey) // API_KEY
 ### Get current user
 ```js
 wakaTimeInstance.currentUser()
-    .then((resp) => console.log(response))
+    .then((resp) => console.log(resp))
     .catch((err) => console.log(err))
-})
 ```
 
 ## Get stats
@@ -78,7 +81,7 @@ There are four ways to get your WakaTime summaries.
     
 ### Get durations
 >A user's logged time for the given day as an array of duration blocks.
-There are two days to get durations.
+There are two ways to get durations.
 1. By defining the target date in `YYYY-MM-DD` format.
     ```js
     wakaTimeInstance.durations('2015-10-13').then().catch()
