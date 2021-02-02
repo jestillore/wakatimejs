@@ -20,9 +20,9 @@ export class WakaTime {
   }
 
   async currentUser () {
-    console.log(this.getApiOptions('/users/current'))
+//     console.log(this.getApiOptions('/users/current'))
     const {url, headers} = this.getApiOptions('/users/current')
-    console.log(url, headers)
+//     console.log(url, headers)
     return (await axios.get(url, {headers})).data
   }
 
